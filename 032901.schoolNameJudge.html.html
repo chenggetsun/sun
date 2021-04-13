@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+		   <input type="text" v-model="a">
+		  
+		       <h2>学校列表</h2>
+		       <ul>
+		           <li v-for="(school,index) in schools" v-if="a==school.num">
+		               学校{{index+1}}
+		               <ul>
+		                   <li v-for="(value,key) of school">{{key}}:&nbsp:{{value}}</li>
+		               </ul>
+		           </li>
+		       </ul>
+		    
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				 data() {
+					 return{
+						 a:'',
+						schools:[
+							{
+							num:985,
+							name:'南京大学'
+						    },
+							{
+								num:985,
+								name:'浙江大学'
+							},
+							{
+								num:985,
+								name:'南开大学'
+							},
+							{
+								num:211,
+								name:'东华大学'
+							},
+							{
+								num:211,
+								name:'大连理工大学'
+							},
+							{
+								num:211,
+								name:'上海外国语大学'
+							}
+						]
+					 }
+				 },
+				 methods:{
+					 
+				 },
+			})
+		</script>
+	</body>
+</html>
