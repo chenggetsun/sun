@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+		当前月份为：	<input v-model="month" type="text" />
+		天数为：{{days[month-1]}}
+		</div>
+		<script type="text/javascript">
+			new Vue({
+				el:'#app',
+				 data() {
+					 return{
+						 month:'',
+						 days:[31,28,31,30,31,30,31,31,30,30,30,31]
+					 }
+				 }
+			})
+		</script>
+	</body>
+</html>
